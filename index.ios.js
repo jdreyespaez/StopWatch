@@ -2,17 +2,30 @@ import React from 'react';
 import {
   Text,
   View,
-  AppRegistry
+  AppRegistry,
+  StyleSheet
 } from 'react-native';
 
 var StopWatch = React.createClass({
   render: function() {
     return <View>
-      <Text>
-        00:00.00
-      </Text>
-      {this.startStopButton()}
-      {this.lapButton()}
+      <View>
+        <View>
+          <Text>
+            00:00.00
+          </Text>
+        </View>
+        <View>
+          {this.startStopButton()}
+          {this.lapButton()}
+        </View>
+      </View>
+
+      <View>
+        <Text>
+          I am lis of Laps
+        </Text>
+      </View>
     </View>
   },
   startStopButton: function() {
@@ -28,6 +41,19 @@ var StopWatch = React.createClass({
         Lap
       </Text>
     </View>
+  }
+});
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1, 
+    alignItems: 'stretch'
+  },
+  header: {
+    flex: 1
+  },
+  footer: {
+    flex: 1
   }
 });
 
