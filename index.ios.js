@@ -3,7 +3,8 @@ import {
   Text,
   View,
   AppRegistry,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight
 } from 'react-native';
 
 var StopWatch = React.createClass({
@@ -29,11 +30,14 @@ var StopWatch = React.createClass({
     </View>
   },
   startStopButton: function() {
-    return <View>
+    return <TouchableHighlight
+      underlayColor="gray"
+      onPress={this.handleStartPress}
+      >
       <Text>
         Start
       </Text>
-    </View>
+    </TouchableHighlight>
   },
   lapButton: function() {
     return <View>
@@ -42,10 +46,13 @@ var StopWatch = React.createClass({
       </Text>
     </View>
   },
+  handleStartPress: function() {
+    console.log('Start was pressed');
+  },
   border: function(color) {
     return {
       borderColor: color,
-      borderWidth: 3
+      borderWidth: 4
     }
   }
 });
