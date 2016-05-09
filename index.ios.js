@@ -8,6 +8,11 @@ import {
 } from 'react-native';
 
 var StopWatch = React.createClass({
+  getInitialState: function() {
+    return {
+      timeElapsed: null
+    }
+  },
   render: function() {
     return <View style={styles.container}>
       <View style={[styles.header, this.border('yellow')]}>
@@ -47,7 +52,13 @@ var StopWatch = React.createClass({
     </View>
   },
   handleStartPress: function() {
-    console.log('Start was pressed');
+    var startTime = new Date();
+
+
+
+    this.setState({
+      timeElapsed: new Date() - startTime
+    });
   },
   border: function(color) {
     return {
